@@ -1,0 +1,99 @@
+<project name="MyAntProject" default="compile" basedir=".">
+  <!-- set global properties -->
+  <property environment="env"/>
+  <property name="junit.output.dir" value="junit"/>
+  <property name="debuglevel" value="source,lines,vars"/>
+  <property name="target" value="1.8"/>
+  <property name="source" value="1.8"/>
+  
+  <path id="selenium-java-3.0.0-beta2.userclasspath">
+        <pathelement location="../../../../Softwares/Selenium/selenium-java-3.0.0-beta2/lib/cglib-nodep-3.2.4.jar"/>
+        <pathelement location="../../../../Softwares/Selenium/selenium-java-3.0.0-beta2/lib/commons-codec-1.10.jar"/>
+        <pathelement location="../../../../Softwares/Selenium/selenium-java-3.0.0-beta2/lib/commons-exec-1.3.jar"/>
+        <pathelement location="../../../../Softwares/Selenium/selenium-java-3.0.0-beta2/lib/commons-logging-1.2.jar"/>
+        <pathelement location="../../../../Softwares/Selenium/selenium-java-3.0.0-beta2/lib/gson-2.3.1.jar"/>
+        <pathelement location="../../../../Softwares/Selenium/selenium-java-3.0.0-beta2/lib/guava-19.0.jar"/>
+        <pathelement location="../../../../Softwares/Selenium/selenium-java-3.0.0-beta2/lib/hamcrest-core-1.3.jar"/>
+        <pathelement location="../../../../Softwares/Selenium/selenium-java-3.0.0-beta2/lib/hamcrest-library-1.3.jar"/>
+        <pathelement location="../../../../Softwares/Selenium/selenium-java-3.0.0-beta2/lib/httpclient-4.5.2.jar"/>
+        <pathelement location="../../../../Softwares/Selenium/selenium-java-3.0.0-beta2/lib/httpcore-4.4.4.jar"/>
+        <pathelement location="../../../../Softwares/Selenium/selenium-java-3.0.0-beta2/lib/httpmime-4.5.2.jar"/>
+        <pathelement location="../../../../Softwares/Selenium/selenium-java-3.0.0-beta2/lib/jna-4.1.0.jar"/>
+        <pathelement location="../../../../Softwares/Selenium/selenium-java-3.0.0-beta2/lib/jna-platform-4.1.0.jar"/>
+        <pathelement location="../../../../Softwares/Selenium/selenium-java-3.0.0-beta2/lib/junit-4.12.jar"/>
+        <pathelement location="../../../../Softwares/Selenium/selenium-java-3.0.0-beta2/lib/netty-3.5.7.Final.jar"/>
+        <pathelement location="../../../../Softwares/Selenium/selenium-java-3.0.0-beta2/lib/phantomjsdriver-1.2.1.jar"/>
+        <pathelement location="../../../../Softwares/Selenium/selenium-java-3.0.0-beta2/client-combined-3.0.0-beta2-nodeps.jar"/>
+    </path>
+    <path id="JUnit4.userclasspath">
+        <pathelement location="../../../../Softwares/hamcrest-core-1.3.jar"/>
+        <pathelement location="../../../../Softwares/junit-4.12.jar"/>
+    </path>
+    <path id="Selenium.classpath">
+        <pathelement location="bin"/>
+        <path refid="selenium-java-3.0.0-beta2.userclasspath"/>
+        <path refid="JUnit4.userclasspath"/>
+    </path>
+
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+	
+    <target name="build" depends="init">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="Selenium.classpath"/>
+        </javac>
+    </target>
+    
+    <target name="RadioBtns_Checkboxes">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="com.blog.junitTests.RadioBtns_Checkboxes" todir="${junit.output.dir}"/>
+            <classpath refid="Selenium.classpath"/>
+        </junit>
+    </target>
+	
+    <target name="SelectItems">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="com.blog.junitTests.SelectItems" todir="${junit.output.dir}"/>
+            <classpath refid="Selenium.classpath"/>
+        </junit>
+    </target>
+   
+   <!-- HTML Report -->
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report styledir="." format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+
+	<!-- JUnit PDF report installation location -->
+	<import file="E:/Chandu/Softwares/junitpdfreport_essentials_1_0/build-junitpdfreport.xml"/>
+	
+	<!-- PDF Report -->
+	<target name="pdfReport">
+	  <junitpdfreport todir="${junit.output.dir}" styledir="default"> 
+	    <fileset dir="${junit.output.dir}"> 
+	      <include name="TEST-*.xml"/> 
+	    </fileset> 
+	  </junitpdfreport>
+	</target>  
+	
+</project>
