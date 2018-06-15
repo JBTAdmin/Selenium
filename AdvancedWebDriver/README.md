@@ -28,3 +28,9 @@ Below is a list of all the articles under 'Building blocks' along with,
 - https://javabeginnerstutorial.com/selenium/10f-advanced-webdriver-taking-screenshot/
 - Code Files: SaveScreenshot.java ,ScreenshotTest.java, ScreenshotTest_2018-06-03 18-41-51.jpg
 
+10g. Saving screenshots to a word document
+- https://javabeginnerstutorial.com/selenium/10g-advanced-webdriver-saving-screenshots-to-word-document/
+- All related files and documents are placed inside 'Saving Screenshots to Word Document' folder
+- Code Files: SaveDocument.java, WordDocWithScreenshotTest.java, SaveScreenshot.java 
+- JARs : java2word-3.3.jar, xstream-1.3.1.jar 
+- Other Files: WordDocWithScreenshot.doc, WordDocWithScreenshot1.png, WordDocWithScreenshot2.png, Logo.png 
