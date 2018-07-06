@@ -41,3 +41,9 @@ Below is a list of all the articles under 'Building blocks' along with,
 - Code Files: SendMail.java, InvokeMail.java
 - JARs : javax.mail-1.6.1.jar, activation.jar 
 - PDF attachment: junit.pdf
+
+**10i. Advanced WebDriver - Using property files**
+- https://javabeginnerstutorial.com/selenium/10i-advanced-webdriver-property-files/
+- All related files are placed inside 'Property Files' folder
+- Code File: RadioBtns_Checkboxes.java
+- Property File: config.properties
