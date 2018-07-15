@@ -47,3 +47,11 @@ Below is a list of all the articles under 'Building blocks' along with,
 - All related files are placed inside 'Property Files' folder
 - Code File: RadioBtns_Checkboxes.java
 - Property File: config.properties
+
+**10j. Advanced WebDriver - Reading data from excel using POI**
+- https://javabeginnerstutorial.com/selenium/10j-advanced-webdriver-reading-data-from-excel-using-poi/
+- All related files are placed inside 'Reading data from excel' folder
+- Code Files: ExcelOperationsUsingPOI.java, ReadExcelData.java
+- JARs: poi-3.17 folder
+- Excel worksheet: ReadUsingPOI.xlsx
+
