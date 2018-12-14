@@ -7,3 +7,7 @@ Below is a list of the articles under 'WebDriver' along with,
 **9aa. Executing JavaScript code**
 - https://javabeginnerstutorial.com/selenium/9aa-webdriver-executing-javascript-code/
 - Code File: JavaScriptExecutorTest.java
+
+**9r. Assert and Verify**
+- https://javabeginnerstutorial.com/selenium/9r-webdriver-assert-and-verify/
+- Code File: AssertAndVerify.java
