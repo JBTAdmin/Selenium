@@ -55,3 +55,12 @@ Below is a list of all the articles under 'Building blocks' along with,
 - JARs: poi-3.17 folder
 - Excel worksheet: ReadUsingPOI.xlsx
 
+**10k. Advanced WebDriver - Using log4j Part 1** and **10l. Advanced WebDriver - Using log4j Part 2**
+- https://javabeginnerstutorial.com/selenium/10k-advanced-webdriver-using-log4j-part-1/
+- https://javabeginnerstutorial.com/selenium/10l-advanced-webdriver-using-log4j-part-2/
+- All related files are placed inside 'Using Log4j' folder
+- Code Files: Log4jTest.java, Log4j.properties
+- JAR: apache-log4j-1.2.17 folder
+- Chrome driver: chromedriver_win32 folder
+- Generated log files: system.log, test.log
+
